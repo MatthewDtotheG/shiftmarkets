@@ -10,8 +10,6 @@ class Timer extends Component {
       currentSplit: 0
     };
 
-
-
     handleClick = () => {
         if (this.state.elapsedTime === 0 || this.state.currentSplit === this.state.elapsedTime) {
           const startTime = Date.now() - this.state.elapsedTime;
@@ -40,6 +38,7 @@ class Timer extends Component {
               <ul>
               {this.state.splits.map(time =>
                 <ShowSplits
+                  key={time}
                   time={time}
                   currentSplit={this.state.currentSplit}
                   updateSplit={this.updateSplit}
